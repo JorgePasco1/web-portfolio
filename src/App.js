@@ -45,7 +45,7 @@ function App() {
             >
               resume
             </a>
-            ✌🏼. Also, you might want to check my{" "}
+            ✌🏼. Also, here are my{" "}
             <a
               href="https://www.github.com/jorgepasco1"
               className="link"
@@ -65,9 +65,15 @@ function App() {
             </a>{" "}
             profiles
           </p>
+          <p className="contact-p">
+            Reach out to me by filling out this{" "}
+            <button href="#" className="unstyled-button" onClick={openModal}>
+              form
+            </button>
+            , or at jorgepascosoto@gmail.com 📩
+          </p>
         </section>
       </main>
-      <button onClick={openModal}>Open Modal</button>
       <Form isOpen={modalIsOpen} closeModal={closeModal} />
     </div>
   );
