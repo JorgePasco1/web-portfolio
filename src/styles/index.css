@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: whitesmoke;
+  /* color: rgb(75, 75, 75,0.75) */
+}
+
+main {
+  margin-top: 5rem;
+  text-align: center;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  margin-bottom: 5rem;
+  color: rgb(46, 46, 46);
+}
+
+main > section > p {
+  margin-top: 3rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+}
+
+main > section > p > .bold {
+  font-weight: bold;
+}
+
+.about-section {
+  margin-bottom: 3rem;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px dashed #ccc;
+  background: #999;
+}
+
+.bannerPic {
+  margin-bottom: -50px;
+}
+
+.bannerPic > img {
+  margin-top: 3rem;
+  height: 20rem;
+  border-radius: 50%;
+}
+
+.bannerPic > .about-container {
+  margin: 0 auto;
+  width: fit-content;
+  padding: .2rem 2rem 0.2rem 2rem; 
+  background-color: rgb(54, 54, 54);
+  border-radius: 10px;
+  position: relative;
+  top:-50px;
+}
+
+.about-container > h1 {
+  color: whitesmoke;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 5rem;
+}
+
+.link {
+  color: black;
+  font-weight: 500;
+  transition: all .4s;
+}
+
+.link:hover {
+  color: rgb(77, 77, 77)
+}
