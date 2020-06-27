@@ -10,10 +10,10 @@
 .Modal {
   font-family: Poppins;
   position: absolute;
-  top: 20%;
-  left: 30%;
-  right: 30%;
-  bottom: 20%;
+  top: 16%;
+  left: 28%;
+  right: 28%;
+  bottom: 16;
   background: whitesmoke;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -24,6 +24,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.Modal > form {
+  display: flex;
+  flex-direction: column;
 }
 
 .form-title {
@@ -46,7 +51,7 @@
 }
 
 .form-ta{
-  margin-top: 2rem;
+  margin-top: .8rem;
   padding: 1rem 0 0 1rem;
   font-family: Poppins;
 }
