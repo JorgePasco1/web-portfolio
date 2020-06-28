@@ -4,23 +4,28 @@
 }
 
 body {
-  background-color: whitesmoke;
+  overflow-x: hidden;
 }
 
 main {
-  margin-top: 3rem;
+  min-height: calc(100vh - 3rem);
+  background-color: whitesmoke;
+  padding: 3rem 4rem 0 4rem;
   text-align: center;
-  padding-left: 4rem;
-  padding-right: 4rem;
-  margin-bottom: 5rem;
   color: rgb(54, 54, 54);
+  transition: all 0.3s linear;
+}
+
+.dark {
+  background-color: rgb(54, 54, 54);
+  color: whitesmoke;
 }
 
 main > section > p {
   margin-top: 3rem;
   font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
-  text-overflow: ellipsis
+  text-overflow: ellipsis;
 }
 
 main > section > p > .bold {
@@ -47,7 +52,7 @@ hr {
   border-radius: 50%;
 }
 
-.bannerPic > .about-container {
+.about-container {
   margin: 0 auto;
   width: fit-content;
   padding: 0.2rem 2rem 0.2rem 2rem;
@@ -55,6 +60,11 @@ hr {
   border-radius: 10px;
   position: relative;
   top: -50px;
+  transition: all 0.3s linear;
+}
+
+.about-container.dark {
+  background-color: whitesmoke;
 }
 
 .about-container > h1 {
@@ -62,16 +72,29 @@ hr {
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
   font-size: 5rem;
+  transition: all 0.3s linear;
 }
 
-.link {
+.about-container.dark > h1 {
+  color: rgb(54, 54, 54);
+}
+
+main > section > p > .link {
   color: black;
   font-weight: 500;
   transition: all 0.4s;
 }
 
-.link:hover {
-  color: rgb(77, 77, 77);
+main > section > p > .link:hover, .unstyled-button:hover {
+  color: rgb(105, 105, 105);
+}
+
+main.dark > section > p > .link {
+  color: white;
+}
+
+main.dark > section > p > .link:hover, .unstyled-button.dark:hover {
+  color: rgb(182, 182, 182);
 }
 
 .unstyled-button {
@@ -86,6 +109,10 @@ hr {
   font-weight: 500;
   transition: all 0.4s;
   text-decoration: underline;
+}
+
+.unstyled-button.dark {
+  color: white;
 }
 
 @media (max-width: 750px) {
@@ -114,6 +141,6 @@ hr {
 
 @media (max-width: 400px) {
   main > section > p {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 }

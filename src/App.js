@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import BannerPic from "./Components/BannerPic";
 import Form from "./Components/Form";
 import FormToast from "./Components/FormToast";
+import { ThemeContext } from "./ThemeContext";
 
 function App() {
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -14,9 +15,12 @@ function App() {
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
 
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   return (
-    <div className="App">
-      <main>
+    <>
+      <main className={theme}>
+        <button onClick={toggleTheme}>Toggle</button>
         <section className="about-section">
           <BannerPic />
           <p>
@@ -70,7 +74,7 @@ function App() {
           </p>
           <p className="contact-p">
             Reach out to me by filling out this{" "}
-            <button href="#" className="unstyled-button" onClick={openModal}>
+            <button href="#" className={`unstyled-button ${theme}`} onClick={openModal}>
               form
             </button>
             , or email me at jorgepascosoto@gmail.com 📩
@@ -84,7 +88,7 @@ function App() {
         handleEmail={handleEmailState}
       />
       <FormToast called={showToast} success={emailSent} />
-    </div>
+    </>
   );
 }
 
