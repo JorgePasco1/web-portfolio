@@ -48,7 +48,7 @@ function App() {
             >
               resume
             </a>
-            ✌🏼. Also, here are my{" "}
+            ✌️. Also, here are my{" "}
             <a
               href="https://www.github.com/jorgepasco1"
               className="link"

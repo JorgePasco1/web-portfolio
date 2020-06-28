@@ -20,6 +20,7 @@ main > section > p {
   margin-top: 3rem;
   font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
+  text-overflow: ellipsis
 }
 
 main > section > p > .bold {
@@ -87,15 +88,32 @@ hr {
   text-decoration: underline;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
+  main {
+    padding-left: 3.2rem;
+    padding-right: 3.2rem;
+  }
+
+  main > section > p {
+    font-size: 1.2rem;
+  }
+
   .bannerPic > .about-container {
     top: -30px;
+    padding-left: 6%;
+    padding-right: 6%;
   }
   .bannerPic > img {
     height: 10rem;
   }
 
   .about-container > h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  main > section > p {
+    font-size: .8rem;
   }
 }

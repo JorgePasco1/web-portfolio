@@ -78,8 +78,8 @@
 
 .close-button {
   position: absolute;
-  top: 30px;
-  right: 40px;
+  top: 2%;
+  right: 3%;
   font-weight: normal;
 }
 
@@ -99,6 +99,13 @@
   .form-input {
     width: 7rem;
   }
+
+  .Modal {
+    top: 5%;
+    left: 5%;
+    right: 5%;
+    bottom: 5%;
+  }
 }
 
 @media (max-width: 1150px) {
@@ -112,15 +119,16 @@
   }
 }
 
-@media (max-width: 900px) {
-  .Modal {
-    top: 15%;
-    left: 5%;
-    right: 5%;
-    bottom: 10%;
+@media (max-height: 800px) {
+  .form-title {
+    font-size: 1.5rem;
   }
 
-  .form-title {
-    font-size: 2rem;
+  .input-container {
+    margin-bottom: 10px;
+  }
+
+  .form-ta {
+    height: 10rem;
   }
 }
