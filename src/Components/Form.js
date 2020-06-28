@@ -55,7 +55,7 @@ export default function Form(props) {
       contentLabel="Contact Modal"
     >
       <h2 className="form-title">Contact Me</h2>
-      <form ref={formRef}>
+      <form ref={formRef} className="message-form">
         <div className="inline-inputs">
           <div className="input-container">
             <label htmlFor="your-name">Your name</label>
@@ -88,8 +88,6 @@ export default function Form(props) {
               ? placeHolderMessages.canType
               : placeHolderMessages.needsInfo
           }
-          rows="15"
-          cols="70"
           readOnly={!(userName && userEmail)}
           value={userMessage}
           onChange={(event) => setUserMessage(event.target.value)}
