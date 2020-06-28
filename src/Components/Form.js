@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import Modal from "react-modal";
-import "../styles/Form.css";
+import "../styles/form.css";
 
 Modal.setAppElement("#root");
 
