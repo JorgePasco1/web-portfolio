@@ -1,22 +1,48 @@
 import React, { useState, useRef } from "react";
 import Modal from "react-modal";
-import "./styles/Form.css";
+import "../styles/Form.css";
 
 Modal.setAppElement("#root");
 
 export default function Form(props) {
+  const placeHolderMessages = {
+    needsInfo: "Please, fill out name and email first.",
+    canType: "Start typing your message",
+    additional: "Forgot to say something? Send another email ;)",
+  };
+
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userMessage, setUserMessage] = useState("");
 
-  const formRef =  useRef(null)
+  const formRef = useRef(null);
+  const textAreaRef = useRef(null)
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (formRef.current.checkValidity()) {
-      console.log(userName)
+      const template_params = {
+        from_name: userName,
+        from_email: userEmail,
+        message: userMessage,
+      };
+      window.emailjs
+        .send("gmail", "template_oWWe49dU", template_params)
+        .then((res) => {
+          props.handleEmail(true);
+          props.handleToast(true);
+          textAreaRef.current.placeholder = placeHolderMessages.additional
+          setUserMessage("")
+        })
+        .catch((err) => {
+          props.handleToast(true);
+        })
+        .finally(() => {
+          props.handleToast(false);
+          props.handleEmail(false);
+        });
     } else {
-      formRef.current.reportValidity()
+      formRef.current.reportValidity();
     }
   };
 
@@ -54,12 +80,13 @@ export default function Form(props) {
           </div>
         </div>
         <textarea
+          ref={textAreaRef}
           className="form-ta"
           name="form-ta"
           placeholder={
             userName && userEmail
-              ? "Start typing your message"
-              : "Please, fill out name and email first."
+              ? placeHolderMessages.canType
+              : placeHolderMessages.needsInfo
           }
           rows="15"
           cols="70"

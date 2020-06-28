@@ -1,15 +1,18 @@
-import React from "react";
-import BannerPic from "./BannerPic";
-import Form from "./Form";
+import React, { useState } from "react";
+import BannerPic from "./Components/BannerPic";
+import Form from "./Components/Form";
+import FormToast from "./Components/FormToast";
 
 function App() {
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-  function openModal() {
-    setIsOpen(true);
-  }
-  function closeModal() {
-    setIsOpen(false);
-  }
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
+
+  const handleToastState = (newValue) => setShowToast(newValue);
+  const handleEmailState = (newValue) => setEmailSent(newValue);
+
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
 
   return (
     <div className="App">
@@ -70,11 +73,17 @@ function App() {
             <button href="#" className="unstyled-button" onClick={openModal}>
               form
             </button>
-            , or at jorgepascosoto@gmail.com 📩
+            , or email me at jorgepascosoto@gmail.com 📩
           </p>
         </section>
       </main>
-      <Form isOpen={modalIsOpen} closeModal={closeModal} />
+      <Form
+        isOpen={modalIsOpen}
+        closeModal={closeModal}
+        handleToast={handleToastState}
+        handleEmail={handleEmailState}
+      />
+      <FormToast called={showToast} success={emailSent} />
     </div>
   );
 }
