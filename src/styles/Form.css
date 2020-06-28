@@ -72,6 +72,11 @@
   border: none;
 }
 
+.submit-button:disabled {
+  background-color: rgb(114, 114, 114);
+  cursor: not-allowed;
+}
+
 .Modal > .unstyled-button {
   text-decoration: None;
 }

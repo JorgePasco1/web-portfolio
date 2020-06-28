@@ -16,7 +16,8 @@ export default function Form(props) {
   const [userMessage, setUserMessage] = useState("");
 
   const formRef = useRef(null);
-  const textAreaRef = useRef(null)
+  const textAreaRef = useRef(null);
+  const sendButtonRef = useRef(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -26,13 +27,17 @@ export default function Form(props) {
         from_email: userEmail,
         message: userMessage,
       };
+
+      sendButtonRef.current.value = 'Sending...'
+      sendButtonRef.current.disabled = true;
+
       window.emailjs
         .send("gmail", "template_oWWe49dU", template_params)
         .then((res) => {
           props.handleEmail(true);
           props.handleToast(true);
-          textAreaRef.current.placeholder = placeHolderMessages.additional
-          setUserMessage("")
+          textAreaRef.current.placeholder = placeHolderMessages.additional;
+          setUserMessage("");
         })
         .catch((err) => {
           props.handleToast(true);
@@ -40,6 +45,7 @@ export default function Form(props) {
         .finally(() => {
           props.handleToast(false);
           props.handleEmail(false);
+          sendButtonRef.current.disabled = false;
         });
     } else {
       formRef.current.reportValidity();
@@ -93,7 +99,11 @@ export default function Form(props) {
           onChange={(event) => setUserMessage(event.target.value)}
           required
         ></textarea>
-        <button onClick={handleSubmit} className="submit-button">
+        <button
+          ref={sendButtonRef}
+          onClick={handleSubmit}
+          className="submit-button"
+        >
           Send
         </button>
       </form>
