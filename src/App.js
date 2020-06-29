@@ -1,4 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef } from "react";
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+} from "body-scroll-lock";
+
 import BannerPic from "./Components/BannerPic";
 import Form from "./Components/Form";
 import FormToast from "./Components/FormToast";
@@ -13,14 +18,22 @@ function App() {
   const handleToastState = (newValue) => setShowToast(newValue);
   const handleEmailState = (newValue) => setEmailSent(newValue);
 
-  const openModal = () => setIsOpen(true);
-  const closeModal = () => setIsOpen(false);
+  const mainRef = useRef(null);
+
+  const openModal = () => {
+    setIsOpen(true);
+    disableBodyScroll(mainRef.current);
+  };
+  const closeModal = () => {
+    enableBodyScroll(mainRef.current);
+    setIsOpen(false);
+  };
 
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
     <>
-      <main className={theme}>
+      <main ref={mainRef} className={theme}>
         <div className="toggleButtonContainer">
           <DarkModeToggle
             onChange={toggleTheme}

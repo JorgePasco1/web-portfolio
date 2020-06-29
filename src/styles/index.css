@@ -122,9 +122,13 @@ main.dark > section > p > .link:hover, .unstyled-button.dark:hover {
   right: 4rem;
 }
 
+.preventScroll {
+  overflow: hidden
+}
+
 @media (max-width: 750px) {
   main {
-    padding: 2rem 3.2rem 2rem 3.2rem;
+    padding: 2rem 3.2rem 3rem 3.2rem;
   }
 
   main > section > p {
