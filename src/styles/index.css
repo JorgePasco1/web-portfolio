@@ -115,6 +115,13 @@ main.dark > section > p > .link:hover, .unstyled-button.dark:hover {
   color: white;
 }
 
+.toggleButtonContainer {
+  position: absolute;
+  width: 5%;
+  top: 3%;
+  right: 4%;
+}
+
 @media (max-width: 750px) {
   main {
     padding-left: 3.2rem;

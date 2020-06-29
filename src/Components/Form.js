@@ -14,6 +14,7 @@ export default function Form(props) {
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userMessage, setUserMessage] = useState("");
+  const [buttonText, setButtonText] = useState("Send");
 
   const formRef = useRef(null);
   const textAreaRef = useRef(null);
@@ -28,7 +29,7 @@ export default function Form(props) {
         message: userMessage,
       };
 
-      sendButtonRef.current.value = 'Sending...'
+      setButtonText("Sending...");
       sendButtonRef.current.disabled = true;
 
       window.emailjs
@@ -45,6 +46,7 @@ export default function Form(props) {
         .finally(() => {
           props.handleToast(false);
           props.handleEmail(false);
+          setButtonText("Send");
           sendButtonRef.current.disabled = false;
         });
     } else {
@@ -104,7 +106,7 @@ export default function Form(props) {
           onClick={handleSubmit}
           className="submit-button"
         >
-          Send
+          {buttonText}
         </button>
       </form>
       <button

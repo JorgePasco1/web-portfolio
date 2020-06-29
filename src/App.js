@@ -3,6 +3,7 @@ import BannerPic from "./Components/BannerPic";
 import Form from "./Components/Form";
 import FormToast from "./Components/FormToast";
 import { ThemeContext } from "./ThemeContext";
+import DarkModeToggle from "react-dark-mode-toggle";
 
 function App() {
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -20,7 +21,13 @@ function App() {
   return (
     <>
       <main className={theme}>
-        <button onClick={toggleTheme}>Toggle</button>
+        <div className="toggleButtonContainer">
+          <DarkModeToggle
+            onChange={toggleTheme}
+            checked={theme === "dark"}
+            size={50}
+          />
+        </div>
         <section className="about-section">
           <BannerPic />
           <p>
@@ -74,7 +81,11 @@ function App() {
           </p>
           <p className="contact-p">
             Reach out to me by filling out this{" "}
-            <button href="#" className={`unstyled-button ${theme}`} onClick={openModal}>
+            <button
+              href="#"
+              className={`unstyled-button ${theme}`}
+              onClick={openModal}
+            >
               form
             </button>
             , or email me at jorgepascosoto@gmail.com 📩
