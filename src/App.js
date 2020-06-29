@@ -25,7 +25,7 @@ function App() {
           <DarkModeToggle
             onChange={toggleTheme}
             checked={theme === "dark"}
-            size={50}
+            size={40}
           />
         </div>
         <section className="about-section">
