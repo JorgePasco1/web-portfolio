@@ -65,7 +65,7 @@ function App() {
           <p>
             You can download or take a look at my{" "}
             <a
-              href="https://drive.google.com/file/d/1ZOKB4oyhmFkkmh50giDI3fsH2UL-b_19/view?usp=sharing"
+              href="./JorgePasco_Resume.pdf"
               className="link"
               target="_blank"
               rel="noopener noreferrer"

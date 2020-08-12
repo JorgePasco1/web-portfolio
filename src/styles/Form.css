@@ -1,139 +1,140 @@
 .Overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgb(75, 75, 75, 0.75);
-}
-
-.message-form {
-  width: 100%;
-}
-
-.Modal {
-  font-family: Poppins;
-  position: absolute;
-  top: 15%;
-  left: 28%;
-  right: 28%;
-  bottom: 15%;
-  background: whitesmoke;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  border-radius: 10px;
-  outline: none;
-  padding: 4%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.Modal > form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-title {
-  font-family: Montserrat;
-  color: rgb(54, 54, 54);
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 2rem;
-}
-
-.inline-inputs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.form-input {
-  width: 10rem;
-  margin-left: 0.5rem;
-  padding-left: 0.2rem;
-  font-family: Poppins;
-}
-
-.form-ta {
-  margin-top: 0.8rem;
-  height: 20rem;
-  padding: 1rem 0 0 1rem;
-  font-family: Poppins;
-}
-
-.submit-button {
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 6px;
-  background-color: rgb(54, 54, 54);
-  color: whitesmoke;
-  font-family: Montserrat;
-  border: none;
-}
-
-.submit-button:disabled {
-  background-color: rgb(114, 114, 114);
-  cursor: not-allowed;
-}
-
-.Modal > .unstyled-button {
-  text-decoration: None;
-}
-
-.close-button {
-  position: absolute;
-  top: 2%;
-  right: 3%;
-  font-weight: normal;
-}
-
-@media (max-width: 1500px) {
-  .inline-inputs {
-    font-size: smaller;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(75, 75, 75, 0.75);
   }
-}
-
-@media (max-width: 1400px) {
-  .form-input {
-    width: 8rem;
+  
+  .message-form {
+    width: 100%;
   }
-}
-
-@media (max-width: 1250px) {
-  .form-input {
-    width: 7rem;
-  }
-
+  
   .Modal {
-    top: 5%;
-    left: 5%;
-    right: 5%;
-    bottom: 5%;
+    font-family: Poppins;
+    position: absolute;
+    top: 15%;
+    left: 28%;
+    right: 28%;
+    bottom: 15%;
+    background: whitesmoke;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 10px;
+    outline: none;
+    padding: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-}
-
-@media (max-width: 1150px) {
-  .input-container {
-    width: 98%;
-    margin-bottom: 10px;
+  
+  .Modal > form {
+    display: flex;
+    flex-direction: column;
   }
-
-  .form-input {
-    width: 98%;
-  }
-}
-
-@media (max-height: 800px) {
+  
   .form-title {
-    font-size: 1.5rem;
+    font-family: Montserrat;
+    color: rgb(54, 54, 54);
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
   }
-
-  .input-container {
-    margin-bottom: 10px;
+  
+  .inline-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
-
+  .form-input {
+    width: 10rem;
+    margin-left: 0.5rem;
+    padding-left: 0.2rem;
+    font-family: Poppins;
+  }
+  
   .form-ta {
-    height: 10rem;
+    margin-top: 0.8rem;
+    height: 20rem;
+    padding: 1rem 0 0 1rem;
+    font-family: Poppins;
   }
-}
+  
+  .submit-button {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: rgb(54, 54, 54);
+    color: whitesmoke;
+    font-family: Montserrat;
+    border: none;
+  }
+  
+  .submit-button:disabled {
+    background-color: rgb(114, 114, 114);
+    cursor: not-allowed;
+  }
+  
+  .Modal > .unstyled-button {
+    text-decoration: None;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 2%;
+    right: 3%;
+    font-weight: normal;
+  }
+  
+  @media (max-width: 1500px) {
+    .inline-inputs {
+      font-size: smaller;
+    }
+  }
+  
+  @media (max-width: 1400px) {
+    .form-input {
+      width: 8rem;
+    }
+  }
+  
+  @media (max-width: 1250px) {
+    .form-input {
+      width: 7rem;
+    }
+  
+    .Modal {
+      top: 5%;
+      left: 5%;
+      right: 5%;
+      bottom: 5%;
+    }
+  }
+  
+  @media (max-width: 1150px) {
+    .input-container {
+      width: 98%;
+      margin-bottom: 10px;
+    }
+  
+    .form-input {
+      width: 98%;
+    }
+  }
+  
+  @media (max-height: 800px) {
+    .form-title {
+      font-size: 1.5rem;
+    }
+  
+    .input-container {
+      margin-bottom: 10px;
+    }
+  
+    .form-ta {
+      height: 10rem;
+    }
+  }
+  
